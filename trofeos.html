@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lando Norris | McLaren F1</title>
+	<link href="LOGOS/LOGO DE LANDO.png" rel="icon" type="">
+  <!-- Bootstrap 4.1 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --neon-green: #00FFB2;
+      --dark-bg: #000000;
+      --light-text: #FFFFFF;
+      --gray-bg: #1A1A1A;
+    }
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      font-family: 'Roboto Condensed', sans-serif;
+      line-height: 1.6;
+    }
+    
+    main {
+      flex: 1;
+      padding-top: 80px; /* Para compensar el navbar fixed */
+    }
+    
+    h1, h2, h3, h4, .navbar-brand-text {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+    }
+    
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--dark-bg) !important;
+      border-bottom: 1px solid var(--neon-green);
+      padding: 0.8rem 1rem;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+    
+    .logo-landonorris {
+      height: 42px;
+      width: auto;
+      margin-right: 12px;
+    }
+    
+    .navbar-brand-text {
+      color: var(--neon-green);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link {
+      color: var(--light-text);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin: 0 10px;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: var(--neon-green);
+    }
+    
+    .navbar-toggler {
+      border-color: var(--neon-green);
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://cdn-5.motorsport.com/images/amp/0vD2nOW0/s1000/lando-norris-mclaren-1.webp') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hero-title {
+      color: var(--neon-green);
+      text-shadow: 0 0 20px var(--neon-green);
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+    
+    .btn-neon {
+      background: transparent;
+      color: var(--neon-green);
+      border: 2px solid var(--neon-green);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 12px 30px;
+      transition: all 0.3s;
+    }
+    
+    .btn-neon:hover {
+      background: var(--neon-green);
+      color: var(--dark-bg);
+      box-shadow: 0 0 25px var(--neon-green);
+    }
+    
+    /* Photo Credits */
+    .photo-credit {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      border-radius: 3px;
+      z-index: 2;
+    }
+    
+    .image-container {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    
+    /* Carrusel con pies de foto mejorados */
+    .norris-carousel {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      border: 3px solid var(--neon-green);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0, 255, 178, 0.4);
+    }
+    
+    .carousel-img-container {
+      height: 450px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .carousel-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .carousel-item:hover .carousel-img-container img {
+      transform: scale(1.03);
+    }
+    
+    .carousel-caption-norris {
+      position: relative;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      padding: 25px;
+      background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(26,26,26,0.9));
+      color: white;
+      text-align: left;
+      border-top: 2px solid var(--neon-green);
+    }
+    
+    .carousel-caption-norris h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: var(--neon-green);
+    }
+    
+    .carousel-caption-norris .trophy-info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    
+    .carousel-caption-norris .trophy-detail {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      width: 48%;
+    }
+    
+    .carousel-caption-norris .trophy-detail i {
+      margin-right: 10px;
+      color: var(--neon-green);
+      width: 20px;
+      text-align: center;
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+      width: 50px;
+      height: 50px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid var(--neon-green);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+      transition: all 0.3s;
+    }
+    
+    .carousel-control-prev:hover, 
+    .carousel-control-next:hover {
+      background: var(--neon-green);
+    }
+    
+    .carousel-control-prev {
+      left: 20px;
+    }
+    
+    .carousel-control-next {
+      right: 20px;
+    }
+    
+    .carousel-indicators {
+      bottom: 20px;
+    }
+    
+    .carousel-indicators li {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--light-text);
+      opacity: 0.6;
+      transition: all 0.3s;
+    }
+    
+    .carousel-indicators .active {
+      background-color: var(--neon-green);
+      opacity: 1;
+      transform: scale(1.3);
+    }
+    
+    /* Footer */
+    .simple-footer {
+      background-color: var(--dark-bg);
+      border-top: 2px solid var(--neon-green);
+      padding: 30px 0;
+      text-align: center;
+      color: var(--light-text);
+      font-family: 'Roboto Condensed', sans-serif;
+      width: 100%;
+    }
+    
+    .social-links {
+      margin-bottom: 20px;
+    }
+    
+    .social-icon {
+      color: var(--light-text);
+      font-size: 24px;
+      margin: 0 15px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    .social-icon:hover {
+      color: var(--neon-green);
+      transform: translateY(-3px);
+    }
+    
+    .footer-info {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    
+    .footer-info p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #aaa;
+    }
+    
+    .legal-links {
+      font-size: 13px;
+    }
+    
+    .legal-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 5px;
+      transition: color 0.3s;
+    }
+    
+    .legal-links a:hover {
+      color: var(--neon-green);
+    }
+    
+    .legal-links span {
+      color: #555;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .carousel-img-container {
+        height: 400px;
+      }
+      
+      .carousel-caption-norris {
+        padding: 20px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+      
+      .carousel-img-container {
+        height: 350px;
+      }
+      
+      .carousel-caption-norris h3 {
+        font-size: 1.3rem;
+      }
+      
+      .carousel-caption-norris .trophy-detail {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .carousel-img-container {
+        height: 300px;
+      }
+      
+      .carousel-caption-norris {
+        padding: 15px;
+      }
+      
+      .carousel-control-prev, 
+      .carousel-control-next {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+  <link href="css/estilosmios.css" rel="stylesheet" type="text/css">
+  <link href="css/css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="LOGOS/LOGO DE LANDO.png" 
+             alt="Logo Lando Norris" 
+             class="logo-landonorris">
+        <span class="navbar-brand-text">&nbsp;</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="biografia.html">Biografía</a></li>
+          <li class="nav-item"><a class="nav-link active" href="trofeos.html">Trofeos</a></li>
+          <li class="nav-item"><a class="nav-link" href="mclaren.html">McLaren</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section bg-trpohy mt-1">
+      <div class="container">
+        <h1 class="hero-title bg-negro">TROFEOS</h1>
+        <p class="hero-subtitle bg-negro">La primera mitad del 2025 ha sido crucial para Norris y su pelea por el campeonato&nbsp;</p>
+<a href="#carrusel-trofeos" class="btn btn-neon">EXPLORAR TROFEOS</a>
+      </div>
+      <div class="photo-credit">Foto: Steven Tee / Mc</div>
+    </section>
+    <section id="biografia" class="py-5 bg-naranjapapaya">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2 class="mb-4 bg-negro">AÑO COMPETITIVO<i class="fas fa-helmet-safety"></i> </h2>
+            <p class="lead bg-negro">“Este año ha sido una auténtica montaña rusa, pero me siento en plena forma. Hasta agosto, ya he subido al podio 5 veces con victoria en Australia (Marzo), Mónaco (Mayo), Austria (junio), Gran Bretaña (julio) y Hungría (agosto). Cada trofeo ha sido increíble a su manera: Australia abrió la temporada con fuerza, Mónaco fue un sueño hecho realidad desde la pole, y Austria consolidó nuestro ritmo como equipo. Trabajé muy duro para ganar en Silverstone ante mi gente, y el triunfo en Hungría fue aún más especial con la victoria número 5 del año y la histórica 200. ª de McLaren. Parte de mí cree que este desafío internal es lo que me mantiene afilado: saber que cada victoria cuenta, y que todavía hay mucho más por venir.”</p>
+            <p class="bg-negro">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - Lando Norris 2025&nbsp;</p>
+            <div class="mt-4"> </div>
+          </div>
+          <div class="col-lg-6 image-container mt-4 mt-lg-0"> <img src="IMG/COMPETENCE.jpg" 
+                 class="img-fluid rounded-lg shadow" 
+                 alt="Lando Norris en acción">
+            <div class="photo-credit">Foto: Zak Mauger / Motorsport Images</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrusel de Trofeos -->
+    <section id="carrusel-trofeos" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5 font-orbitron">GALERÍA DE TROFEOS 2025</h2>
+        
+        <div id="norrisCarousel" class="carousel slide norris-carousel" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#norrisCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#norrisCarousel" data-slide-to="1"></li>
+            <li data-target="#norrisCarousel" data-slide-to="2"></li>
+            <li data-target="#norrisCarousel" data-slide-to="3"></li>
+          </ol>
+          
+          <div class="carousel-inner">
+            <!-- Item 1 - Mónaco -->
+            <div class="carousel-item active">
+              <div class="carousel-img-container">
+                <img src="IMG/monaco.png" alt="Lando Norris GP de Mónaco 2025" width="1200" height="800">
+              </div>
+              <div class="carousel-caption-norris">
+                <h3 class="font-orbitron">GP DE MÓNACO</h3>
+                <p>Victoria histórica en las legendarias calles de Montecarlo, demostrando dominio absoluto en el circuito más desafiante del calendario.</p>
+                
+                <div class="trophy-info">
+                  <div class="trophy-detail">
+                    <i class="fas fa-trophy"></i>
+                    <span>Pole Position</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-flag-checkered"></i>
+                    <span>Vuelta rápida</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>1:10.452</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="text-neon">25 Mayo 2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Item 2 - Gran Bretaña -->
+            <div class="carousel-item">
+              <div class="carousel-img-container">
+                <img src="IMG/LANDO PODIO BRITISH.avif.png" alt="Lando Norris GP de Gran Bretaña 2025" width="1200" height="800">
+              </div>
+              <div class="carousel-caption-norris">
+                <h3 class="font-orbitron">GP DE GRAN BRETAÑA</h3>
+                <p>Triunfo épico ante su público en Silverstone, con una remontada desde el 5° lugar en la parrilla hasta el podio más alto.</p>
+                
+                <div class="trophy-info">
+                  <div class="trophy-detail">
+                    <i class="fas fa-trophy"></i>
+                    <span>1er lugar</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-arrows-alt-h"></i>
+                    <span>15 adelantamientos</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>1:25.307</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="text-neon">6 Julio 2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Item 3 - Bélgica -->
+            <div class="carousel-item">
+              <div class="carousel-img-container">
+                <img src="IMG/belgica.webp.png" alt="Lando Norris GP de Bélgica 2025">
+              </div>
+              <div class="carousel-caption-norris">
+                <h3 class="font-orbitron">GP DE BÉLGICA</h3>
+                <p>Dominio total en Spa-Francorchamps, liderando desde la primera vuelta hasta la bandera a cuadros bajo condiciones cambiantes.</p>
+                
+                <div class="trophy-info">
+                  <div class="trophy-detail">
+                    <i class="fas fa-trophy"></i>
+                    <span>Doble podio McLaren</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-cloud-rain"></i>
+                    <span>Mejor en mojado</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>1:45.112</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="text-neon">30 Agosto 2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Item 4 - Japón -->
+            <div class="carousel-item">
+              <div class="carousel-img-container">
+                <img src="IMG/japon.jpeg.png" alt="Lando Norris GP de Japón 2025">
+              </div>
+              <div class="carousel-caption-norris">
+                <h3 class="font-orbitron">GP DE JAPÓN</h3>
+                <p>Consagración como Campeón Mundial en el emblemático circuito de Suzuka, sellando el título con una actuación magistral.</p>
+                
+                <div class="trophy-info">
+                  <div class="trophy-detail">
+                    <i class="fas fa-trophy"></i>
+                    <span>Campeón del Mundo</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-history"></i>
+                    <span>Récord de pista</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>1:27.065</span>
+                  </div>
+                  <div class="trophy-detail">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="text-neon">12 Octubre 2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <a class="carousel-control-prev" href="#norrisCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#norrisCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="simple-footer">
+    <div class="container">
+      <!-- Redes Sociales -->
+        <div class="social-links">
+        <a href="https://www.twitch.tv/landonorris?lang=es" class="social-icon" target="_blank" aria-label="Twitch">
+          <i class="fab fa-twitch"></i>
+        </a>
+        <a href="https://www.instagram.com/lando/?hl=es" class="social-icon" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@landonorris?lang=es" class="social-icon" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+      
+      <!-- Información básica -->
+      <div class="footer-info">
+        <p>Sitio no oficial de Lando Norris - Fan Page creada por Laura Cortes</p>
+        <p>&copy; 2025 Todos los derechos reservados</p>
+      </div>
+      
+      <!-- Enlaces legales -->
+      <div class="legal-links">
+        <a href="#">Política de Privacidad</a>
+        <span>|</span>
+        <a href="#">Términos de Uso</a>
+        <span>|</span>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 4.1 JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Efectos adicionales para el carrusel
+    $(document).ready(function(){
+      // Pausar el carrusel al pasar el mouse
+      $('#norrisCarousel').carousel({
+        interval: 6000,
+        pause: "hover"
+      });
+      
+      // Efecto hover para los controles
+      $('.carousel-control-prev, .carousel-control-next').hover(
+        function() {
+          $(this).css({
+            'background': 'var(--neon-green)',
+            'transform': 'translateY(-50%) scale(1.1)'
+          });
+        },
+        function() {
+          $(this).css({
+            'background': 'rgba(0, 0, 0, 0.7)',
+            'transform': 'translateY(-50%)'
+          });
+        }
+      );
+      
+      // Efecto para los indicadores
+      $('.carousel-indicators li').hover(
+        function() {
+          if (!$(this).hasClass('active')) {
+            $(this).css('transform', 'scale(1.2)');
+          }
+        },
+        function() {
+          if (!$(this).hasClass('active')) {
+            $(this).css('transform', 'scale(1)');
+          }
+        }
+      );
+    });
+  </script>
+</body>
+</html>
