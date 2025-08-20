@@ -1,0 +1,48 @@
+@charset "utf-8";
+.bg-landoportada {
+    background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/LANDO%20CON%20FONDO2.webp.png);
+    background-image: -moz-linear-gradient(270deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/LANDO%20CON%20FONDO2.webp.png);
+    background-image: -o-linear-gradient(270deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/LANDO%20CON%20FONDO2.webp.png);
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/LANDO%20CON%20FONDO2.webp.png);
+    border-top-width: 0px;
+}
+.bg-landobiografiapor {
+    background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/FONDO%20BIO.jpg.png);
+    background-image: -moz-linear-gradient(270deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/FONDO%20BIO.jpg.png);
+    background-image: -o-linear-gradient(270deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/FONDO%20BIO.jpg.png);
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.39) 0.00%,rgba(226,117,0,0.63) 100%), url(../IMG/FONDO%20BIO.jpg.png);
+    border-top-width: 0px;
+}
+.bg-trpohy {
+    background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/lando%20fondo%20trof.png);
+    background-image: -moz-linear-gradient(270deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/lando%20fondo%20trof.png);
+    background-image: -o-linear-gradient(270deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/lando%20fondo%20trof.png);
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.39) 0%,rgba(226,117,0,0.63) 100%), url(../IMG/lando%20fondo%20trof.png);
+}
+
+.bg-negro {
+    color: #000000;
+}
+
+.mt-8 {
+    border-width: 76px 27px 27px;
+}
+
+.bg-blanco   {
+    color: #FFFFFF;
+}
+.bg-naranjapapaya {
+    background-color: #FF8000;
+}
+.mt-6 {
+}
+.bg-negrofooter {
+    background-color: #000000;
+}
+.bg-trofeosfondo {
+    background-color: #FF8000;
+
+
+}
+.fa-ig {
+}

@@ -1,0 +1,19 @@
+@charset "utf-8";
+.bg-blanco    {
+    color: #FFFFFF;
+}
+.bg-lando {
+    background-image: url(../IMG/MCLAREN%20PAPAYA.jpg);
+}
+.bg-verdelando  {
+    color: #A1FF2B;
+}
+.bg-landofondonaranja {
+    background-image: url(../IMG/LANDO%20FOTO%20ANCHA.jpg);
+}
+.bg-landonegrofondo {
+    background-image: url(../IMG/LANDO%20CON%20FONDO.webp.png);
+}
+.bg-ln4 {
+    background-image: url(../LOGOS/LOGO%20DE%20LANDO.png);
+}
